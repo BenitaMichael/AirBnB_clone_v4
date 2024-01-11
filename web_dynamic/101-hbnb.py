@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Script That Starts a Flash Web Application """
+"""Script That Starts a Flash Web Application """
 import os
 import uuid
 from flask import Flask, render_template
@@ -19,7 +19,7 @@ def close_db(error):
     storage.close()
 
 
-@app.route('/0-hbnb', strict_slashes=False)
+@app.route('/101-hbnb', strict_slashes=False)
 def hbnb():
     """ HBNB is alive! """
     states = storage.all(State).values()
@@ -37,7 +37,7 @@ def hbnb():
         'places': places,
         'cache_id': uuid.uuid4()
     }
-    return render_template('0-hbnb.html', **ctxt)
+    return render_template('101-hbnb.html', **ctxt)
 
 
 if __name__ == "__main__":
